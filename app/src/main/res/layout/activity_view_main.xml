@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_layout"
+    style="@style/immersion_status"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include
+        style="@style/layout_wrap"
+        layout="@layout/app_base_title" />
+
+    <FrameLayout
+        android:id="@+id/activity_main_view"
+        style="@style/layout_match">
+    </FrameLayout>
+
+</LinearLayout>

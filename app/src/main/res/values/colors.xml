@@ -3,4 +3,29 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="color_blue">#3F51B5</color>
+    <color name="title_gray">#afa7a5</color>
+    <color name="colors_2D67F7">#2D67F7</color>
+    <color name="colors_CCCCCC">#CCCCCC</color>
+    <color name="colors_F5F5F5">#F5F5F5</color>
+    <color name="colors_333333">#333333</color>
+    <color name="colors_999999">#999999</color>
+    <color name="colors_F9310F">#F9310F</color>
+    <color name="colors_666666">#666666</color>
+    <color name="colors_FD3443">#FD3443</color>
+    <color name="colors_4C86F5">#4C86F5</color>
+    <color name="colors_FEEBED">#FEEBED</color>
+    <color name="colors_FFEAD4">#FFEAD4</color>
+    <color name="colors_F30F04">#F30F04</color>
+    <color name="colors_5794FC">#5794FC</color>
+    <color name="colors_4C88FB">#4C88FB</color>
+    <color name="colors_F51A08">#F51A08</color>
+    <color name="colors_FD3544">#FD3544</color>
+    <color name="colors_BBBBBB">#BBBBBB</color>
+    <color name="colors_1D95FA">#1D95FA</color>
+    <color name="colors_FE5400">#FE5400</color>
 </resources>
