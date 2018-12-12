@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lwx.multifunctiondemo.activity.GradientSeekbarActivity">
+    <SeekBar
+        android:id="@+id/seekbar_gradient_seekbar_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="6dp"
+        android:minHeight="6dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/shape_bg_adjust_seekbar"
+        android:splitTrack="false"/>
+</android.support.constraint.ConstraintLayout>

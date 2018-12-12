@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_title_function_adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/x36"
+        android:text=""
+        android:layout_marginTop="@dimen/x20"
+        android:layout_marginLeft="@dimen/x30"
+        android:textColor="@color/colors_999999"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_describe_function_adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/x26"
+        android:text=""
+        android:layout_marginTop="@dimen/x20"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginBottom="@dimen/x20"
+        android:textColor="@color/colors_CCCCCC"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_function_adapter"/>
+</android.support.constraint.ConstraintLayout>

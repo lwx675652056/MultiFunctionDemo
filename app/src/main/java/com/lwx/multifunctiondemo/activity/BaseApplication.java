@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.lwx.multifunctiondemo.utils.Constants;
 import com.lwx.multifunctiondemo.utils.ScreenUtils;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * Created by Dell on 2018/12/10.
@@ -14,6 +15,8 @@ public class BaseApplication extends Application{
     public void onCreate() {
         super.onCreate();
         initParames();
+        //bugly初始化
+        CrashReport.initCrashReport(getApplicationContext(), "4255c6e5b0", false);
     }
 
     /**
