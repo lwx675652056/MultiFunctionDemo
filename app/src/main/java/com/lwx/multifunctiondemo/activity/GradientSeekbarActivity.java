@@ -20,6 +20,7 @@ public class GradientSeekbarActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitleCenterTextView("SeekBar");
         setContentView(R.layout.activity_gradient_seekbar);
     }
 
