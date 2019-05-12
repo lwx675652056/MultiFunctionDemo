@@ -2,6 +2,7 @@ package com.lwx.multifunctiondemo.activity;
 
 import android.app.Application;
 
+import com.lwx.multifunctiondemo.R;
 import com.lwx.multifunctiondemo.utils.Constants;
 import com.lwx.multifunctiondemo.utils.ScreenUtils;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -16,7 +17,7 @@ public class BaseApplication extends Application{
         super.onCreate();
         initParames();
         //bugly初始化
-        CrashReport.initCrashReport(getApplicationContext(), "4255c6e5b0", false);
+        CrashReport.initCrashReport(getApplicationContext(), getResources().getString(R.string.bugly_appid), false);
     }
 
     /**

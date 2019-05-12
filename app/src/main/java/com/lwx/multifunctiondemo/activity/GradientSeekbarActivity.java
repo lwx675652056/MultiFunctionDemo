@@ -34,24 +34,25 @@ public class GradientSeekbarActivity extends AbstractActivity {
      * 初始化seekbarBitmap
      */
     public void initSeekbarBitmap() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(),
-                        R.drawable.icon_seekbar_thumb);
-                int originalWidth = originalBitmap.getWidth();
-                int originalHeight = originalBitmap.getHeight();
-                int newWidth = ScreenUtils.dip2px(mContext, 120);
-                int newHeight = ScreenUtils.dip2px(mContext, 120);
-                float scale = ((float) newHeight) / originalHeight;
-                Matrix matrix = new Matrix();
-                matrix.postScale(scale, scale);
-                Bitmap changedBitmap = Bitmap.createBitmap(originalBitmap, 0, 0,
-                        originalWidth, originalHeight, matrix, true);
-                mSeekbarGradientSeekbarActivity.setThumb(new BitmapDrawable(changedBitmap));
-
-            }
-        }).start();
+        //手动设置图片大小
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(),
+//                        R.drawable.icon_seekbar_thumb);
+//                int originalWidth = originalBitmap.getWidth();
+//                int originalHeight = originalBitmap.getHeight();
+//                int newWidth = ScreenUtils.dip2px(mContext, 120);
+//                int newHeight = ScreenUtils.dip2px(mContext, 120);
+//                float scale = ((float) newHeight) / originalHeight;
+//                Matrix matrix = new Matrix();
+//                matrix.postScale(scale, scale);
+//                Bitmap changedBitmap = Bitmap.createBitmap(originalBitmap, 0, 0,
+//                        originalWidth, originalHeight, matrix, true);
+//                mSeekbarGradientSeekbarActivity.setThumb(new BitmapDrawable(changedBitmap));
+//
+//            }
+//        }).start();
     }
     @Override
     public void initDatas() {

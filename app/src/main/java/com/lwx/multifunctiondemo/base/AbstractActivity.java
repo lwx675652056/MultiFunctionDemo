@@ -24,7 +24,7 @@ import android.widget.TextView;
 import com.lwx.multifunctiondemo.R;
 import com.lwx.multifunctiondemo.utils.ActivityManager;
 import com.lwx.multifunctiondemo.utils.Constants;
-import com.yanzhenjie.sofia.Sofia;
+
 
 /**
  * @description: 基类Activity
@@ -72,13 +72,8 @@ public abstract class AbstractActivity extends FragmentActivity {
 	 */
 	public void setImmersionStatus() {
 		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-			Sofia.with(this)
-					.statusBarDarkFont()//状态栏浅色字体
-					.invasionStatusBar()//内容入侵状态栏
-					.navigationBarBackground(ContextCompat.getColor(this, R.color.black))//导航栏背景色
-					.statusBarBackground(Color.TRANSPARENT);//状态栏背景色
 			// 透明状态栏
-//			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //			// 透明导航栏
 //			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 		}

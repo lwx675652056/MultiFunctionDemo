@@ -1,25 +1,49 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
-        applicationId "com.lwx.multifunctiondemo"
-        minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
             // 设置支持的SO库架构
             abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
+
+        resValue("string", "bugly_appid", rootProject.ext.key.bugly_appid)
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+//            shrinkResources true
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file(rootProject.ext.signingConfig.signFile)
+            storePassword rootProject.ext.signingConfig.storePassword
+            keyAlias rootProject.ext.signingConfig.keyAlias
+            keyPassword rootProject.ext.signingConfig.keyPassword
         }
     }
 }
@@ -28,22 +52,20 @@ configurations.all {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //沉浸式
-    implementation 'com.yanzhenjie:sofia:1.0.5'
-    //权限申请
-    implementation 'pub.devrel:easypermissions:1.3.0'
+    implementation rootProject.ext.deps.appcompatv7
+    implementation rootProject.ext.deps.constraintlayout
+    testImplementation rootProject.ext.deps.junit
+    androidTestImplementation rootProject.ext.deps.test_runner
+    androidTestImplementation rootProject.ext.deps.test_espresso
+    compile rootProject.ext.deps.supportv4
+    compile rootProject.ext.deps.design
     //bugly
-    implementation 'com.tencent.bugly:crashreport:latest.release'
-    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation rootProject.ext.deps.TencentBugly
+    implementation rootProject.ext.deps.TencentBuglyative
     //黄油刀
-//    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
+    implementation rootProject.ext.deps.butterknife
+    annotationProcessor rootProject.ext.deps.butterknifeapt
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation rootProject.ext.deps.glide
+    annotationProcessor rootProject.ext.deps.glideCompiler
 }

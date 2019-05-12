@@ -12,6 +12,7 @@
         android:maxHeight="6dp"
         android:minHeight="6dp"
         style="?android:attr/progressBarStyleHorizontal"
+        android:thumb="@drawable/icon_seekbar_thumb"
         android:progressDrawable="@drawable/shape_bg_adjust_seekbar"
         android:splitTrack="false"/>
 </android.support.constraint.ConstraintLayout>
