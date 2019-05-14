@@ -60,7 +60,7 @@ public class MainActivity extends AbstractActivity implements AdapterView.OnItem
                 startActivity(new Intent(mContext,GradientSeekbarActivity.class));
                 break;
             case 1:
-
+                startActivity(new Intent(mContext,ScaleBackgroundActivity.class));
                 break;
             default:
 
