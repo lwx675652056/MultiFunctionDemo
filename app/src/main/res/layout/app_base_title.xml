@@ -28,7 +28,7 @@
             android:layout_width="9dp"
             android:layout_height="16dp"
             android:layout_gravity="center"
-            android:src="@mipmap/icon_left_arrow" />
+            android:src="@mipmap/left_arrow" />
     </FrameLayout>
 
     <TextView

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/score_bg"
+    android:layout_height="49dp" >
+    <!--android:background="@drawable/primary_draw_background"-->
+
+    <ImageView
+        android:id="@+id/back"
+        android:padding="3dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/left_arrow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@mipmap/public_titleview_close_web"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/back"
+        android:layout_toEndOf="@id/back"
+        />
+    <TextView
+        android:id="@+id/text_name_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:maxEms="10"
+        android:visibility="visible"
+        android:layout_centerInParent="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/tv_h5_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:maxEms="8"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:singleLine="true"
+        android:textColor="@color/white"/>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/img_share"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/public_titleview_share_nomal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/img_favorite_top"
+        android:visibility="gone"
+        android:src="@mipmap/public_titleview_empt_star"
+        android:layout_toLeftOf="@+id/img_share"
+        android:layout_toStartOf="@id/img_share"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/wenhao_image"
+        android:visibility="gone"
+        android:layout_toLeftOf="@+id/img_share"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/public_titleview_wenhao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:id="@+id/jingque"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:text="智能匹配"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:id="@+id/jingque2"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/public_title_three_pt"/>
+    <View
+        android:id="@+id/titlt_bot_divider"
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1dp"/>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.lwx.multifunctiondemo.views;
+package com.lwx.multifunctiondemo.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
