@@ -54,6 +54,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.deps.appcompatv7
     implementation rootProject.ext.deps.constraintlayout
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation rootProject.ext.deps.junit
     androidTestImplementation rootProject.ext.deps.test_runner
     androidTestImplementation rootProject.ext.deps.test_espresso
@@ -63,8 +64,8 @@ dependencies {
     implementation rootProject.ext.deps.TencentBugly
     implementation rootProject.ext.deps.TencentBuglyative
     //黄油刀
-    implementation rootProject.ext.deps.butterknife
-    annotationProcessor rootProject.ext.deps.butterknifeapt
+    //implementation rootProject.ext.deps.butterknife
+    //annotationProcessor rootProject.ext.deps.butterknifeapt
     //Glide
     implementation rootProject.ext.deps.glide
     annotationProcessor rootProject.ext.deps.glideCompiler
