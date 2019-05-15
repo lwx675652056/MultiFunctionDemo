@@ -1,9 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="MyAppTheme" parent="AppTheme">
@@ -11,29 +13,24 @@
         <item name="android:windowEnableSplitTouch">false</item>
         <item name="android:splitMotionEvents">false</item>
         <item name="android:windowNoTitle">true</item>
-        <!-- 去掉默认背景色-->
-        <item name="android:windowBackground">@null</item>
+        <item name="windowActionBar">false</item>
+        <!-- 修改默认背景色,基类不设置背景色此处可以不用去掉背景色-->
+        <!--<item name="android:windowBackground">@null</item>-->
     </style>
 
-    <style name="LaunchAppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="LaunchAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--<item name="android:windowBackground">@mipmap/icon_splash</item>-->
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="MainAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <!-- 沉浸状态栏的设置 -->
-    <style name="immersion_status" parent="layout_match">
+    <style name="immersion_status">
         <item name="android:clipToPadding">true</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>

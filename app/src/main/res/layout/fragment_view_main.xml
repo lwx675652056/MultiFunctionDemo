@@ -4,8 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <include layout="@layout/app_base_title" />
-    <FrameLayout
+    <com.lwx.multifunctiondemo.widget.PublicTitleView
+        android:id="@+id/public_title_view"
+        style="@style/layout_wrap"/>
+
+    <FrameLayout
         android:id="@+id/fragment_main_view"
         style="@style/layout_match" >
     </FrameLayout>

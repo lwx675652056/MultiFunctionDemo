@@ -7,7 +7,7 @@
         android:paddingTop="4dp">
         <shape>
             <corners android:radius="50dp"/>
-            <solid android:color="#FFEAD4"/>
+            <solid android:color="#F1F6FE"/>
         </shape>
     </item>
 
@@ -20,6 +20,7 @@
                     android:centerColor="#FF6B31"
                     android:endColor="#FF461A"
                     />
+                <!--<solid android:color="#3786FD"></solid>-->
             </shape>
         </clip>
     </item>

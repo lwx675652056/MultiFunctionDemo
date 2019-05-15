@@ -10,12 +10,12 @@ import android.widget.Toast;
 import com.lwx.multifunctiondemo.R;
 import com.lwx.multifunctiondemo.adapter.CommonAdapter;
 import com.lwx.multifunctiondemo.adapter.MainListAdapter;
-import com.lwx.multifunctiondemo.base.AbstractActivity;
+import com.lwx.multifunctiondemo.base.BaseActivity;
 import com.lwx.multifunctiondemo.utils.ActivityManager;
 import com.lwx.multifunctiondemo.utils.ModelUtils;
 
 
-public class MainActivity extends AbstractActivity implements AdapterView.OnItemClickListener{
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener{
     private static final String TAG = "MainActivity";
     private ListView mLvMainActivity;
     private CommonAdapter mCommonAdapter;
@@ -24,8 +24,6 @@ public class MainActivity extends AbstractActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitleLeftImageVisible(false);
-        setTitleCenterTextView("功能展示");
         setContentView(R.layout.activity_main);
     }
 

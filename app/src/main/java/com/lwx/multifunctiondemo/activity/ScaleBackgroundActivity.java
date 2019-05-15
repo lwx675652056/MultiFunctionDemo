@@ -6,12 +6,12 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.lwx.multifunctiondemo.R;
-import com.lwx.multifunctiondemo.base.AbstractActivity;
+import com.lwx.multifunctiondemo.base.BaseActivity;
 import com.lwx.multifunctiondemo.utils.ScaleBackgroundAnimation;
 
 
 
-public class ScaleBackgroundActivity extends AbstractActivity {
+public class ScaleBackgroundActivity extends BaseActivity {
     private RelativeLayout mLlBg;
     private Button mBtnShowdailog;
 

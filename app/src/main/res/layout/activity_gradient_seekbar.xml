@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.lwx.multifunctiondemo.activity.GradientSeekbarActivity">
+
     <SeekBar
         android:id="@+id/seekbar_gradient_seekbar_activity"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxHeight="6dp"
         android:minHeight="6dp"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:thumb="@drawable/icon_seekbar_thumb"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:thumb="@mipmap/icon_affirm_money_seekbar"
         android:progressDrawable="@drawable/shape_bg_adjust_seekbar"
-        android:splitTrack="false"/>
+        android:splitTrack="false" />
 </android.support.constraint.ConstraintLayout>

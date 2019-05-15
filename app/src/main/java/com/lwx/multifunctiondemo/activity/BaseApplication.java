@@ -12,21 +12,41 @@ import com.tencent.bugly.crashreport.CrashReport;
  */
 
 public class BaseApplication extends Application{
+    private static BaseApplication mBaseApplication = null;
+    /**
+     * 设置 和 获取 屏幕的分辨率
+     */
+    private int wid, hei;
     @Override
     public void onCreate() {
         super.onCreate();
-        initParames();
+        mBaseApplication = this;
         //bugly初始化
         CrashReport.initCrashReport(getApplicationContext(), getResources().getString(R.string.bugly_appid), false);
     }
 
-    /**
-     * 获取屏幕尺寸
-     */
-    private void initParames() {
-        int[] screenSizes = ScreenUtils.getScreenSize(this);
-        Constants.screenWidth = screenSizes[0];
-        Constants.screenHeight = screenSizes[1];
-        Constants.screenStatus = ScreenUtils.getStatusHeight(this);
+    public static BaseApplication getmApplication() {
+        return mBaseApplication;
+    }
+
+    public void setScreenSize(int wid, int hei) {
+        this.wid = wid;
+        this.hei = hei;
+    }
+
+    public int getWid() {
+        return wid;
+    }
+
+    public void setWid(int wid) {
+        this.wid = wid;
+    }
+
+    public int getHei() {
+        return hei;
+    }
+
+    public void setHei(int hei) {
+        this.hei = hei;
     }
 }

@@ -1,18 +1,12 @@
 package com.lwx.multifunctiondemo.activity;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.graphics.drawable.BitmapDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SeekBar;
 
 import com.lwx.multifunctiondemo.R;
-import com.lwx.multifunctiondemo.base.AbstractActivity;
-import com.lwx.multifunctiondemo.utils.ScreenUtils;
+import com.lwx.multifunctiondemo.base.BaseActivity;
 
-public class GradientSeekbarActivity extends AbstractActivity {
+public class GradientSeekbarActivity extends BaseActivity {
     private SeekBar mSeekbarGradientSeekbarActivity;
 
 
@@ -20,7 +14,6 @@ public class GradientSeekbarActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitleCenterTextView("SeekBar");
         setContentView(R.layout.activity_gradient_seekbar);
     }
 

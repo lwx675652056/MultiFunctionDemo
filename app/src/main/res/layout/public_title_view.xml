@@ -1,117 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_titlebar"
     android:layout_width="match_parent"
-    android:id="@+id/score_bg"
-    android:layout_height="49dp" >
+    android:layout_height="49dp">
     <!--android:background="@drawable/primary_draw_background"-->
 
     <ImageView
-        android:id="@+id/back"
-        android:padding="3dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
+        android:id="@+id/img_back_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/left_arrow"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        />
+        android:layout_centerVertical="true"
+        android:padding="15dp"
+        android:src="@mipmap/left_arrow" />
+
     <ImageView
-        android:id="@+id/img_close"
+        android:id="@+id/img_close_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/back"
+        android:layout_toRightOf="@+id/back"
         android:padding="10dp"
         android:src="@mipmap/public_titleview_close_web"
-        android:visibility="gone"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/back"
-        android:layout_toEndOf="@id/back"
-        />
+        android:visibility="gone" />
+
     <TextView
-        android:id="@+id/text_name_setting"
+        android:id="@+id/text_name_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_centerInParent="true"
         android:ellipsize="end"
         android:maxEms="10"
-        android:visibility="visible"
-        android:layout_centerInParent="true"
         android:singleLine="true"
-        android:textColor="@color/white"
-        />
-    <TextView
-        android:id="@+id/tv_h5_title"
+        android:textColor="@color/colors_333333"
+        android:textSize="18sp"
+        android:visibility="visible"
+        tools:text="标题" />
+
+    <ImageView
+        android:id="@+id/img_share_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:ellipsize="end"
-        android:maxEms="8"
-        android:visibility="gone"
-        android:layout_centerInParent="true"
-        android:singleLine="true"
-        android:textColor="@color/white"/>
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/img_share"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:src="@mipmap/public_titleview_share_nomal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:visibility="gone" />
+
     <ImageView
-        android:id="@+id/img_favorite_top"
-        android:visibility="gone"
-        android:src="@mipmap/public_titleview_empt_star"
+        android:id="@+id/img_favorite_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:layout_toLeftOf="@+id/img_share"
         android:layout_toStartOf="@id/img_share"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:src="@mipmap/public_titleview_empt_star"
+        android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/wenhao_image"
-        android:visibility="gone"
-        android:layout_toLeftOf="@+id/img_share"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:layout_alignParentRight="true"
-        android:src="@mipmap/public_titleview_wenhao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
     <TextView
-        android:visibility="gone"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:id="@+id/jingque"
-        android:layout_marginRight="15dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:text="智能匹配"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:visibility="gone"
-        android:textSize="14sp"
-        android:id="@+id/jingque2"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/text_right_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/public_title_three_pt"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:text="智能匹配" />
+
+
     <View
-        android:id="@+id/titlt_bot_divider"
-        android:background="#d7d7d7"
+        android:id="@+id/bot_divider_titlebar"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:layout_height="1dp"/>
+        android:background="#d7d7d7" />
 </RelativeLayout>

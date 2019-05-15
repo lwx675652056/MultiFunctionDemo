@@ -18,16 +18,18 @@ public class PublicTitleView extends LinearLayout {
 
     public View mView;
     public Context mContext;
-    public TextView mTitleName;
-    public TextView mH5TitleName;
-    public ImageView mBackBtn;
-    public submitCallBack callBack;
-    ImageView mShareBtn, mFavoriteBtn;
-    TextView jingque;
-    RelativeLayout score_bg;
-    ImageView wenhao_image;
-    View zhinengMatch;
+    private RelativeLayout mTitlebar;
+    //中间文字
+    private TextView mTitleName;
+    //返回按钮
+    private ImageView mBackBtn;
+    //右侧第一个图片和第二个图片,第二个图片在第一个的左边
+    private ImageView mRightFirstImageView, mRightSecondImageView;
+    //右侧文字,默认隐藏
+    private TextView mRightText;
+    //关闭按钮
     private ImageView mCloseBtn;
+    //底部分割线
     private View mDivider;
 
     public PublicTitleView(Context context, AttributeSet attrs) {
@@ -41,202 +43,241 @@ public class PublicTitleView extends LinearLayout {
 
     }
 
-    //设置收藏的状态
-    public void stateLike(int state) {
-        mFavoriteBtn.setVisibility(state);
-    }
-
-
-    public void hideDivider() {
-        mDivider.setVisibility(GONE);
-    }
-
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         mView = LayoutInflater.from(mContext).inflate(R.layout.public_title_view, this);
-        mDivider = mView.findViewById(R.id.titlt_bot_divider);
-        mCloseBtn = (ImageView) mView.findViewById(R.id.img_close);
-        mTitleName = (TextView) mView.findViewById(R.id.text_name_setting);
-        mH5TitleName = (TextView) mView.findViewById(R.id.tv_h5_title);
-        mBackBtn = (ImageView) mView.findViewById(R.id.back);
-        mShareBtn = (ImageView) mView.findViewById(R.id.img_share);
-        mFavoriteBtn = (ImageView) mView.findViewById(R.id.img_favorite_top);
-        jingque = (TextView) mView.findViewById(R.id.jingque);
-        score_bg = (RelativeLayout) mView.findViewById(R.id.score_bg);
-        wenhao_image = (ImageView) mView.findViewById(R.id.wenhao_image);
-        zhinengMatch = mView.findViewById(R.id.jingque2);
-
-//        ViewGroup.LayoutParams layoutParams = this.getLayoutParams();
-//        if(BaseApplication.getmApplication().getWid()<=720)
-//        {
-//            layoutParams.height = 144 * 2 / 3;
-//        }else if(BaseApplication.getmApplication().getWid()<=1080)
-//        {
-//            layoutParams.height = 144;
-//
-//        }else if(BaseApplication.getmApplication().getWid()<=1440)
-//        {
-//            layoutParams.height = 144 + 144 / 3;
-//        }
-//        layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//        this.setLayoutParams(layoutParams);
+        mDivider = mView.findViewById(R.id.bot_divider_titlebar);
+        mCloseBtn = (ImageView) mView.findViewById(R.id.img_close_titlebar);
+        mTitleName = (TextView) mView.findViewById(R.id.text_name_titlebar);
+        mBackBtn = (ImageView) mView.findViewById(R.id.img_back_titlebar);
+        mRightFirstImageView = (ImageView) mView.findViewById(R.id.img_share_titlebar);
+        mRightSecondImageView = (ImageView) mView.findViewById(R.id.img_favorite_titlebar);
+        mRightText = (TextView) mView.findViewById(R.id.text_right_titlebar);
+        mTitlebar = (RelativeLayout) mView.findViewById(R.id.rl_titlebar);
     }
 
-    public void setState(int state) {
-        mShareBtn.setVisibility(state);
-        mFavoriteBtn.setVisibility(state);
+    /**
+     * 设置右侧第一个imageview图片
+     *
+     * @param image
+     */
+    public void setmRightFirstImageViewImage(int image) {
+        mRightFirstImageView.setImageResource(image);
     }
 
-    public void shareVisable(int visable) {
-        mShareBtn.setVisibility(visable);
+    /**
+     * 设置右侧第一个imageview点击监听
+     *
+     * @param clickListener
+     */
+    public void setRightFirstImageViewListener(OnClickListener clickListener) {
+        mRightFirstImageView.setOnClickListener(clickListener);
     }
 
-    public void setFavorite(boolean favorite) {
-        if (favorite) {
-            mFavoriteBtn.setImageDrawable(getResources().getDrawable(R.mipmap.public_titleview_full_star));
-        } else {
-            mFavoriteBtn.setImageDrawable(getResources().getDrawable(R.mipmap.public_titleview_empt_star));
-        }
-    }
-
-    public void setScoreBG() {
-        score_bg.setBackgroundResource(R.color.colors_CC504A);
+    /**
+     * 设置右侧第一个imageview是否显示
+     *
+     * @param state
+     */
+    public void setRightFirstImageViewVisibility(int state) {
+        mRightFirstImageView.setVisibility(state);
     }
 
 
-    public void setScoreBG(int color) {
-        score_bg.setBackgroundResource(color);
+    public void setRightImageVisibility(int state) {
+        mRightFirstImageView.setVisibility(state);
+        mRightSecondImageView.setVisibility(state);
     }
 
-    public void setFXState(int state) {
-        mShareBtn.setVisibility(state);
+
+    /**
+     * 设置右侧第二个ImageView点击监听
+     *
+     * @param clickListener
+     */
+    public void setRightSecondImageViewListener(OnClickListener clickListener) {
+        mRightSecondImageView.setOnClickListener(clickListener);
     }
 
-    public void setjingqueState(int state) {
-        jingque.setVisibility(state);
+    /**
+     * 设置右侧第二个ImageView图片
+     *
+     * @param image_id
+     */
+    public void setRightSecondImageViewImage(int image_id) {
+        mRightSecondImageView.setImageResource(image_id);
     }
 
-    public void setjingque2State(int state) {
-        zhinengMatch.setVisibility(state);
+    /**
+     * 设置右侧第二个ImageView是否显示
+     *
+     * @param state
+     */
+    public void setRightSecondImageViewVisibility(int state) {
+        mRightSecondImageView.setVisibility(state);
     }
 
-    public void setjingqueText(String str) {
-        jingque.setText(str);
+
+    /**
+     * 设置titlebar背景色
+     *
+     * @param color
+     */
+    public void setTitlebarBGColor(int color) {
+        mTitlebar.setBackgroundResource(color);
     }
 
-    public void jingqueListener(OnClickListener clickListener) {
-        jingque.setOnClickListener(clickListener);
+    /**
+     * 设置是否显示titlebar
+     *
+     * @param state
+     */
+    public void setTitlebarVisibility(int state) {
+        mTitlebar.setVisibility(state);
     }
 
-    public void jinque2Listener(OnClickListener onClickListener) {
-        zhinengMatch.setOnClickListener(onClickListener);
+    /**
+     * 设置右侧文字是否显示
+     *
+     * @param state
+     */
+    public void setRightTextVisibility(int state) {
+        mRightText.setVisibility(state);
     }
 
-    public void setFavoriteBtnListener(OnClickListener clickListener) {
-        mFavoriteBtn.setOnClickListener(clickListener);
+    /**
+     * 设置右侧文字
+     *
+     * @param str
+     */
+    public void setRightText(String str) {
+        mRightText.setText(str);
     }
 
-    public void setShareBtnListener(OnClickListener clickListener) {
-        mShareBtn.setOnClickListener(clickListener);
+    /**
+     * 设置右侧文字监听
+     *
+     * @param clickListener
+     */
+    public void setRightTextListener(OnClickListener clickListener) {
+        mRightText.setOnClickListener(clickListener);
     }
 
-    public void setFavoriteImage(int image_id) {
-        mFavoriteBtn.setImageResource(image_id);
+    /**
+     * 设置右侧文字颜色
+     *
+     * @param color
+     */
+    public void setRightTextColor(int color) {
+        mRightText.setTextColor(color);
     }
 
-    public void setFavoriteBtnVisibility(int state) {
-        mFavoriteBtn.setVisibility(state);
+    /**
+     * 设置右侧文字大小
+     *
+     * @param size
+     */
+    public void setRightTextSize(int size) {
+        mRightText.setTextSize(size);
     }
 
-    public void setShareBtnVisibility(int state) {
-        mShareBtn.setVisibility(state);
-    }
-
+    /**
+     * 设置返回监听
+     *
+     * @param clickListener
+     */
     public void setBackBtnListener(OnClickListener clickListener) {
         mBackBtn.setOnClickListener(clickListener);
     }
 
-    public void setShareImage(int image) {
-        mShareBtn.setImageResource(image);
-    }
-
-    public void setWHState(int state) {
-        wenhao_image.setVisibility(state);
-    }
-
-    public void setWHListener(OnClickListener clickListener) {
-        wenhao_image.setOnClickListener(clickListener);
-    }
-
+    /**
+     * 设置返回是否显示
+     *
+     * @param state
+     */
     public void setBackBtnVisibility(int state) {
         mBackBtn.setVisibility(state);
     }
 
-    public void setBackLeft(OnClickListener clickListener) {
-        mBackBtn.setOnClickListener(clickListener);
+    /**
+     * 设置返回图片
+     *
+     * @param image
+     */
+    public void setBackBtnImage(int image) {
+        mBackBtn.setImageResource(image);
     }
 
-    public void setTitleName(String str) {
+    /**
+     * 设置标题文字
+     *
+     * @param str
+     */
+    public void setTitleText(String str) {
         mTitleName.setText(str);
     }
 
-    public void setH5TitleName(String name) {
-        mH5TitleName.setText(name);
-    }
-
-    public void setH5TitleVisible(int visible) {
-        mH5TitleName.setVisibility(visible);
-    }
-
+    /**
+     * 设置标题文字大小
+     *
+     * @param size
+     */
     public void setTitleTextSize(int size) {
         mTitleName.setTextSize(size);
     }
 
-    public void setTextNameColor(int cc) {
+    /**
+     * 设置标题文字颜色
+     *
+     * @param cc
+     */
+    public void setTextTextColor(int cc) {
         mTitleName.setTextColor(cc);
-        mH5TitleName.setTextColor(cc);
     }
 
-    public void setTitleNameVisible(int visible) {
+    /**
+     * 设置标题文字是否显示
+     *
+     * @param visible
+     */
+    public void setTitleTextVisible(int visible) {
         mTitleName.setVisibility(visible);
     }
 
-    public void setInterSubmitface(submitCallBack callBack) {
-        this.callBack = callBack;
+
+    /**
+     * 设置关闭按钮是否显示
+     *
+     * @param state
+     */
+    public void setClosePageVisibility(int state) {
+        mCloseBtn.setVisibility(state);
     }
 
-    public void showClosePageView() {
-        mCloseBtn.setVisibility(View.VISIBLE);
-    }
-
-    public void hideClosePageView() {
-        mCloseBtn.setVisibility(View.GONE);
-    }
-
-    public void setClosePageIma(int ima) {
+    /**
+     * 设置关闭按钮图片
+     *
+     * @param ima
+     */
+    public void setClosePageImage(int ima) {
         mCloseBtn.setImageResource(ima);
     }
 
-    //点击关闭按钮退出page页面
-    public void addClosePageClickListener(OnClickListener onClickListener) {
+    /**
+     * 点击关闭按钮退出page页面
+     *
+     * @param onClickListener
+     */
+    public void setClosePageClickListener(OnClickListener onClickListener) {
         mCloseBtn.setOnClickListener(onClickListener);
     }
 
-    public void setjingqueTextColor(int color) {
-        jingque.setTextColor(color);
+    /**
+     * 隐藏底部分割线
+     */
+    public void hideDivider() {
+        mDivider.setVisibility(GONE);
     }
 
-    public void setBtnEnable(boolean enable) {
-        mShareBtn.setEnabled(enable);
-        mFavoriteBtn.setEnabled(enable);
-    }
-
-    public interface submitCallBack {
-        public void submit();
-    }
-
-    public void setBackImage(int image) {
-        mBackBtn.setImageResource(image);
-    }
 }
