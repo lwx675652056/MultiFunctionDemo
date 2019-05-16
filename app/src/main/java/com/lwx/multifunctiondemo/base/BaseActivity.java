@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.lwx.multifunctiondemo.R;
 import com.lwx.multifunctiondemo.activity.BaseApplication;
 import com.lwx.multifunctiondemo.utils.ActivityManager;
+import com.lwx.multifunctiondemo.utils.BaseAlertToast;
 import com.lwx.multifunctiondemo.utils.Constants;
 import com.lwx.multifunctiondemo.utils.ScreenUtils;
 import com.lwx.multifunctiondemo.widget.PublicTitleView;
@@ -38,11 +39,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected ViewGroup main_view;// 内容主题
     public View abstractView;// view_main的布局对象
-    public PublicTitleView public_title_view;//标题布局
+    public PublicTitleView mPublicTitleView;//标题布局
     // 上下文
     protected Context mContext;
     protected Activity mActivity;
-
+    private BaseAlertToast alertToast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +113,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         mActivity = this;
         main_view = (ViewGroup) findViewById(R.id.activity_main_view);
-        public_title_view = (PublicTitleView) findViewById(R.id.public_title_view);
+        mPublicTitleView = (PublicTitleView) findViewById(R.id.public_title_view);
     }
 
     private void getScreenSize() {
@@ -120,6 +121,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         BaseApplication.getmApplication().setScreenSize(screenSizes[0], screenSizes[1]);
     }
 
+    public void showShortToast(String text) {
+        if (alertToast == null) alertToast = BaseAlertToast.getInstance();
+        alertToast.show(mContext, text);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

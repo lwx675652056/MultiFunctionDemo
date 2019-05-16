@@ -17,6 +17,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
         <activity android:name=".activity.MainActivity">
@@ -27,7 +28,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.GradientSeekbarActivity" />
-        <activity android:name=".activity.ScaleBackgroundActivity"></activity>
+        <activity android:name=".activity.ScaleBackgroundActivity" />
+        <activity
+            android:name=".activity.WebActivity"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>

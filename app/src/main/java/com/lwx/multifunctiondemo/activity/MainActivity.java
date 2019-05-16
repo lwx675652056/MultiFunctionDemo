@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 startActivity(new Intent(mContext,ScaleBackgroundActivity.class));
                 break;
             default:
-
+                startActivity(new Intent(mContext,WebActivity.class));
                 break;
 
         }

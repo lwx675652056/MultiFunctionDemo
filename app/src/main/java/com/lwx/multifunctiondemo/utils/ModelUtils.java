@@ -21,6 +21,7 @@ public class ModelUtils {
         List<FunctionBean> functionBeans= new ArrayList<>();
         functionBeans.add(new FunctionBean("seekbar","带渐变色的seekbar,并修改thumb图片"));
         functionBeans.add(new FunctionBean("背景缩放","仿京东商品详情背景3D缩小"));
+        functionBeans.add(new FunctionBean("webview","封装webview工具类整合各种情况"));
         return functionBeans;
     }
 }

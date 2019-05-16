@@ -3,6 +3,7 @@ package com.lwx.multifunctiondemo.activity;
 import android.app.Application;
 
 import com.lwx.multifunctiondemo.R;
+import com.lwx.multifunctiondemo.utils.ConfigUtils;
 import com.lwx.multifunctiondemo.utils.Constants;
 import com.lwx.multifunctiondemo.utils.ScreenUtils;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -48,5 +49,10 @@ public class BaseApplication extends Application{
 
     public void setHei(int hei) {
         this.hei = hei;
+    }
+
+    // 获取token
+    public String getUser_token() {
+        return ConfigUtils.getUserToken(getApplicationContext(), "");
     }
 }
