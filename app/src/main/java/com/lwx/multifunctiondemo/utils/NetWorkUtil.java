@@ -25,7 +25,7 @@ public class NetWorkUtil {
      *
      * @param context
      */
-    private static String getNetWorkState(Context context) {
+    public static String getNetWorkState(Context context) {
         //获取系统的网络服务
         ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         //如果当前没有网络

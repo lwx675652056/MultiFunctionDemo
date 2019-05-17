@@ -2,17 +2,18 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/tv_title_function_adapter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:text=""
+        tools:text="123"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
-        android:textColor="@color/colors_999999"
+        android:textColor="@color/colors_333333"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -21,11 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="13sp"
-        android:text=""
+        tools:text="1345"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
-        android:textColor="@color/colors_CCCCCC"
+        android:textColor="@color/colors_666666"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_function_adapter"/>
